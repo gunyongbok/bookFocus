@@ -43,7 +43,6 @@ function BookFocus() {
     const [author, setAuthor] = useState('');
     const [contents, setContents] = useState('');
     const [topTitle, setTopTitle] = useState('');
-
     const fetchData = async () => {
         const response = await axios.get(SERVER_URL);
         setData(response.data);
@@ -51,6 +50,8 @@ function BookFocus() {
     useEffect(() => {
         fetchData();
     }, []);
+
+    console.log(data['result'][0]);
 
     const onSubmitHandler = async (e) => {
         e.preventDefault();
@@ -61,6 +62,15 @@ function BookFocus() {
         await axios.post(SERVER_URL, { title, bookTitle, author, content });
         setTitle('');
         setAuthor('');
+    };
+
+    const deleteAllHandler = async (e) => {
+        await axios
+            .put(`${SERVER_URL}/${data['result'][0].bookReportId}`, null)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => console.log('Error :', error));
     };
 
     return (
@@ -80,6 +90,7 @@ function BookFocus() {
                 <Contents contents={contents} setContents={setContents} />
                 <Button>저장</Button>
             </Form>
+            <button onClick={deleteAllHandler}>다 삭제</button>
         </Container>
     );
 }

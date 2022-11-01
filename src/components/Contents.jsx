@@ -16,7 +16,7 @@ const ContentsInput = styled.textarea`
 function Contents({ contents, setContents }) {
     return (
         <ContentsInput
-            name="main"
+            name="contents"
             placeholder="책 내용을 작성해주세요"
             value={contents}
             onChange={(e) => {
