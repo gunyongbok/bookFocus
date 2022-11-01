@@ -7,6 +7,7 @@ import Contents from '../components/Contents';
 import book1 from '../images/book1.png';
 import book2 from '../images/book2.png';
 import '../BookFocus.css';
+import { useNavigate } from 'react-router-dom';
 
 const SERVER_URL =
     'http://ec2-52-79-150-177.ap-northeast-2.compute.amazonaws.com:24330/api/v1/report';
@@ -37,21 +38,12 @@ const Button = styled.button`
     border: none;
     background-color: #fbf3db;
 `;
-function BookFocus() {
-    const [data, setData] = useState(null);
+function BookFocus({ data }) {
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
     const [contents, setContents] = useState('');
     const [topTitle, setTopTitle] = useState('');
-    const fetchData = async () => {
-        const response = await axios.get(SERVER_URL);
-        setData(response.data);
-    };
-    useEffect(() => {
-        fetchData();
-    }, []);
-
-    console.log(data['result'][0]);
+    let navigate = useNavigate();
 
     const onSubmitHandler = async (e) => {
         e.preventDefault();
@@ -89,8 +81,24 @@ function BookFocus() {
                 <Author author={author} setAuthor={setAuthor} />
                 <Contents contents={contents} setContents={setContents} />
                 <Button>저장</Button>
+                <span>
+                    <button onClick={deleteAllHandler}>다 삭제</button>
+                    <button
+                        onClick={() => {
+                            navigate('/bookresult');
+                        }}
+                    >
+                        완성된 독서록 보러가기
+                    </button>
+                    <button
+                        onClick={() => {
+                            navigate('/');
+                        }}
+                    >
+                        Home
+                    </button>
+                </span>
             </Form>
-            <button onClick={deleteAllHandler}>다 삭제</button>
         </Container>
     );
 }

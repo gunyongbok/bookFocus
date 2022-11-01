@@ -1,7 +1,10 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 
-function Main() {
+function Main({ data }) {
     let navigate = useNavigate();
+
     return (
         <div>
             <button
