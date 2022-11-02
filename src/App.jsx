@@ -4,7 +4,6 @@ import BookFocus from './routes/BookFocus';
 import NotFound from './routes/NotFound';
 import BookResult from './routes/BookResult';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 
 const SERVER_URL =
@@ -15,21 +14,6 @@ function App() {
         const { data } = await axios.get(SERVER_URL);
         return data;
     });
-
-    // {
-    //     isLoading
-    //         ? console.log('Loading')
-    //         : console.log(Object.entries(data)[3][1][0].bookReportId);
-    // }
-
-    // const [data, setData] = useState(null);
-    // const fetchData = async () => {
-    //     const response = await axios.get(SERVER_URL);
-    //     setData(response.data);
-    // };
-    // useEffect(() => {
-    //     fetchData();
-    // }, []);
 
     return (
         <BrowserRouter>
@@ -42,7 +26,10 @@ function App() {
                         path="/bookfocus"
                         element={<BookFocus data={data} />}
                     />
-                    <Route path="/bookresult/:id" element={<BookResult />} />
+                    <Route
+                        path="/bookresult/:id"
+                        element={<BookResult data={data} />}
+                    />
                     <Route path="*" element={<NotFound />}></Route>
                 </Routes>
             )}

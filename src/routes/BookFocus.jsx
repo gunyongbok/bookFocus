@@ -17,7 +17,7 @@ const Container = styled.div`
     background-color: #e2cda6;
 `;
 const Form = styled.form`
-    height: 100%;
+    height: 95%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -56,15 +56,6 @@ function BookFocus({ data }) {
         setAuthor('');
     };
 
-    const deleteAllHandler = async (e) => {
-        await axios
-            .put(`${SERVER_URL}/${data['result'][0].bookReportId}`, null)
-            .then((response) => {
-                console.log(response);
-            })
-            .catch((error) => console.log('Error :', error));
-    };
-
     return (
         <Container>
             <Form onSubmit={onSubmitHandler}>
@@ -81,24 +72,23 @@ function BookFocus({ data }) {
                 <Author author={author} setAuthor={setAuthor} />
                 <Contents contents={contents} setContents={setContents} />
                 <Button>저장</Button>
-                <span>
-                    <button onClick={deleteAllHandler}>다 삭제</button>
-                    <button
-                        onClick={() => {
-                            navigate('/bookresult');
-                        }}
-                    >
-                        완성된 독서록 보러가기
-                    </button>
-                    <button
-                        onClick={() => {
-                            navigate('/');
-                        }}
-                    >
-                        Home
-                    </button>
-                </span>
             </Form>
+            <span>
+                <button
+                    onClick={() => {
+                        navigate('/bookresult');
+                    }}
+                >
+                    완성된 독서록 보러가기
+                </button>
+                <button
+                    onClick={() => {
+                        navigate('/');
+                    }}
+                >
+                    Home
+                </button>
+            </span>
         </Container>
     );
 }

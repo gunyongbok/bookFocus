@@ -1,15 +1,24 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { useNavigate, Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const BookList = styled.ul``;
+const SERVER_URL =
+    'http://ec2-52-79-150-177.ap-northeast-2.compute.amazonaws.com:24330/api/v1/report';
 
-const Books = styled.li``;
+const BookList = styled.ul`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+const Books = styled.li`
+    font-size: 50px;
+    margin-bottom: 20px;
+`;
 
 function Main({ data }) {
     let navigate = useNavigate();
-    const a = Object.entries(data)[3][1];
-    console.log(a[0].bookReportId);
+
     return (
         <div>
             <button
@@ -23,6 +32,28 @@ function Main({ data }) {
                 {data['result'].map((a, i) => (
                     <Books key={data['result'][i].bookReportId}>
                         {data['result'][i].title}
+                        <Link
+                            to={`/bookresult/${data['result'][i].bookReportId}`}
+                        >
+                            GO
+                        </Link>
+                        <button
+                            onClick={async () => {
+                                await axios
+                                    .put(
+                                        `${SERVER_URL}/${data['result'][i].bookReportId}`,
+                                        null
+                                    )
+                                    .then((response) => {
+                                        console.log(response);
+                                    })
+                                    .catch((error) =>
+                                        console.log('Error :', error)
+                                    );
+                            }}
+                        >
+                            독서록 삭제
+                        </button>
                     </Books>
                 ))}
             </BookList>
