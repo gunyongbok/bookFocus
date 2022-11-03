@@ -50,6 +50,7 @@ function Main({ data }) {
                                     .catch((error) =>
                                         console.log('Error :', error)
                                     );
+                                window.location.reload();
                             }}
                         >
                             독서록 삭제

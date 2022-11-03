@@ -7,7 +7,7 @@ import Contents from '../components/Contents';
 import book1 from '../images/book1.png';
 import book2 from '../images/book2.png';
 import '../BookFocus.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const SERVER_URL =
     'http://ec2-52-79-150-177.ap-northeast-2.compute.amazonaws.com:24330/api/v1/report';
@@ -72,23 +72,17 @@ function BookFocus({ data }) {
                 <Author author={author} setAuthor={setAuthor} />
                 <Contents contents={contents} setContents={setContents} />
                 <Button>저장</Button>
+                <span>
+                    <button
+                        onClick={() => {
+                            navigate('/');
+                            window.location.reload();
+                        }}
+                    >
+                        Home
+                    </button>
+                </span>
             </Form>
-            <span>
-                <button
-                    onClick={() => {
-                        navigate('/bookresult');
-                    }}
-                >
-                    완성된 독서록 보러가기
-                </button>
-                <button
-                    onClick={() => {
-                        navigate('/');
-                    }}
-                >
-                    Home
-                </button>
-            </span>
         </Container>
     );
 }
