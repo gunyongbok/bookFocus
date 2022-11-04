@@ -1,13 +1,12 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import Title from '../components/Title';
 import Author from '../components/Author';
 import Contents from '../components/Contents';
 import book1 from '../images/book1.png';
 import book2 from '../images/book2.png';
-import '../BookFocus.css';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const SERVER_URL =
     'http://ec2-52-79-150-177.ap-northeast-2.compute.amazonaws.com:24330/api/v1/report';
