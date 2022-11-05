@@ -1,0 +1,15 @@
+.titleInput {
+    text-align: center;
+    height: 5vh;
+    width: 40vw;
+    border: none;
+    border-radius: 20px;
+}
+.mainTitleInput {
+    text-align: center;
+    height: 5vh;
+    width: 40vw;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}

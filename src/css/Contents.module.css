@@ -1,0 +1,12 @@
+textarea {
+    width: 90vw;
+    height: 50vh;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #fbf3db;
+}
+textarea:focus {
+    outline: none;
+}

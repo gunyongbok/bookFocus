@@ -1,0 +1,21 @@
+html,
+body {
+    margin: 0;
+    height: 100vh;
+}
+input:focus {
+    outline: none;
+}
+img {
+    width: 20vh;
+}
+.container {
+    height: 100vh;
+    background-color: #e2cda6;
+}
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -5,20 +5,6 @@ import NotFound from './routes/NotFound';
 import BookResult from './routes/BookResult';
 import axios from 'axios';
 import { useQuery } from 'react-query';
-import { createGlobalStyle } from 'styled-components';
-
-const GlobalStyles = createGlobalStyle`
-    html,body {
-    margin: 0;
-    height: 100vh;
-    }
-    input:focus {
-        outline: none;
-    }
-    img {
-        width: 20vh;
-    }
-`;
 
 const SERVER_URL =
     'http://ec2-52-79-150-177.ap-northeast-2.compute.amazonaws.com:24330/api/v1/report';
@@ -49,7 +35,6 @@ function App() {
                     </Routes>
                 )}
             </BrowserRouter>
-            <GlobalStyles />
         </>
     );
 }

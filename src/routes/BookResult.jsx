@@ -1,19 +1,7 @@
-import styled from 'styled-components';
 import book1 from '../images/book1.png';
 import book2 from '../images/book2.png';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-
-const Container = styled.div`
-    height: 100vh;
-    background-color: #e2cda6;
-`;
-const Header = styled.header`
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-`;
+import styles from '../css/BookResult.module.css';
 
 function BookResult({ data }) {
     const { id } = useParams();
@@ -21,12 +9,12 @@ function BookResult({ data }) {
     console.log(id);
 
     return (
-        <Container>
-            <Header>
+        <div className={styles.container}>
+            <div className={styles.header}>
                 <img src={book1} />
                 <h1>bookId : {id}</h1>
                 <img src={book2} />
-            </Header>
+            </div>
             <span>
                 <button
                     onClick={() => {
@@ -43,7 +31,7 @@ function BookResult({ data }) {
                     Home
                 </button>
             </span>
-        </Container>
+        </div>
     );
 }
 export default BookResult;

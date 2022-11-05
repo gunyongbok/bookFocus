@@ -1,24 +1,16 @@
-import styled from 'styled-components';
-
-const AuthorInput = styled.input`
-    text-align: center;
-    width: 20vw;
-    height: 3vh;
-    border: none;
-    border-radius: 20px;
-`;
+import styles from '../css/Author.module.css';
 
 function Author({ author, setAuthor }) {
     return (
         <div>
-            <AuthorInput
+            <input
                 name="author"
                 placeholder="작가를 작성해주세요"
                 value={author}
                 onChange={(e) => {
                     setAuthor(e.target.value);
                 }}
-            ></AuthorInput>
+            ></input>
         </div>
     );
 }

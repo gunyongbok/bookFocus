@@ -1,20 +1,10 @@
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import styled from 'styled-components';
+import styles from '../css/Main.module.css';
 
 const SERVER_URL =
     'http://ec2-52-79-150-177.ap-northeast-2.compute.amazonaws.com:24330/api/v1/report';
-
-const BookList = styled.ul`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
-
-const Books = styled.li`
-    font-size: 50px;
-    margin-bottom: 20px;
-`;
 
 function Main({ data }) {
     let navigate = useNavigate();
@@ -28,9 +18,9 @@ function Main({ data }) {
             >
                 독서록 쓰기
             </button>
-            <BookList>
+            <ul>
                 {data['result'].map((a, i) => (
-                    <Books key={data['result'][i].bookReportId}>
+                    <li key={data['result'][i].bookReportId}>
                         {data['result'][i].title}
                         <Link
                             to={`/bookresult/${data['result'][i].bookReportId}`}
@@ -55,9 +45,9 @@ function Main({ data }) {
                         >
                             독서록 삭제
                         </button>
-                    </Books>
+                    </li>
                 ))}
-            </BookList>
+            </ul>
         </div>
     );
 }
