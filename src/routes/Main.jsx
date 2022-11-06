@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
-import styled from 'styled-components';
 import styles from '../css/Main.module.css';
 
 const SERVER_URL =
@@ -18,9 +17,19 @@ function Main({ data }) {
             >
                 독서록 쓰기
             </button>
-            <ul>
+            <button
+                onClick={() => {
+                    navigate('/booksearch');
+                }}
+            >
+                책 검색하기
+            </button>
+            <ul className={styles.ul}>
                 {data['result'].map((a, i) => (
-                    <li key={data['result'][i].bookReportId}>
+                    <li
+                        className={styles.li}
+                        key={data['result'][i].bookReportId}
+                    >
                         {data['result'][i].title}
                         <Link
                             to={`/bookresult/${data['result'][i].bookReportId}`}

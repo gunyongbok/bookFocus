@@ -3,6 +3,7 @@ import styles from '../css/Contents.module.css';
 function Contents({ contents, setContents }) {
     return (
         <textarea
+            className={styles.contents_textarea}
             name="contents"
             placeholder="책 내용을 작성해주세요"
             value={contents}

@@ -1,4 +1,4 @@
-textarea {
+.contents_textarea {
     width: 90vw;
     height: 50vh;
     text-align: center;
@@ -7,6 +7,6 @@ textarea {
     border-radius: 20px;
     background-color: #fbf3db;
 }
-textarea:focus {
+.contents_textarea:focus {
     outline: none;
 }

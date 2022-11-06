@@ -33,14 +33,14 @@ function BookFocus({ data }) {
         <div className={styles.container}>
             <form className={styles.form} onSubmit={onSubmitHandler}>
                 <header className={styles.header}>
-                    <img src={book1} />
+                    <img className={styles.book_img} src={book1} />
                     <Title
                         title={title}
                         topTitle={topTitle}
                         setTitle={setTitle}
                         setTopTitle={setTopTitle}
                     />
-                    <img src={book2} />
+                    <img className={styles.book_img} src={book2} />
                 </header>
                 <Author author={author} setAuthor={setAuthor} />
                 <Contents contents={contents} setContents={setContents} />

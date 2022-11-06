@@ -4,6 +4,7 @@ function Author({ author, setAuthor }) {
     return (
         <div>
             <input
+                className={styles.author_input}
                 name="author"
                 placeholder="작가를 작성해주세요"
                 value={author}

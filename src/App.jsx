@@ -5,6 +5,7 @@ import NotFound from './routes/NotFound';
 import BookResult from './routes/BookResult';
 import axios from 'axios';
 import { useQuery } from 'react-query';
+import BookSearch from './routes/BookSearch';
 
 const SERVER_URL =
     'http://ec2-52-79-150-177.ap-northeast-2.compute.amazonaws.com:24330/api/v1/report';
@@ -31,6 +32,7 @@ function App() {
                             path="/bookresult/:id"
                             element={<BookResult data={data} />}
                         />
+                        <Route path="/booksearch" element={<BookSearch />} />
                         <Route path="*" element={<NotFound />}></Route>
                     </Routes>
                 )}

@@ -3,10 +3,8 @@ body {
     margin: 0;
     height: 100vh;
 }
-input:focus {
-    outline: none;
-}
-img {
+
+.book_img {
     width: 20vh;
 }
 .container {

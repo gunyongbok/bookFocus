@@ -11,9 +11,9 @@ function BookResult({ data }) {
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <img src={book1} />
+                <img className={styles.book_img} src={book1} />
                 <h1>bookId : {id}</h1>
-                <img src={book2} />
+                <img className={styles.book_img} src={book2} />
             </div>
             <span>
                 <button
