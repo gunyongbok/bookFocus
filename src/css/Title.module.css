@@ -5,6 +5,9 @@
     border: none;
     border-radius: 20px;
 }
+.titleInput:focus {
+    outline: none;
+}
 .mainTitleInput {
     text-align: center;
     height: 5vh;
@@ -12,4 +15,7 @@
     border: none;
     border-radius: 20px;
     margin-bottom: 10px;
+}
+.mainTitleInput:focus {
+    outline: none;
 }

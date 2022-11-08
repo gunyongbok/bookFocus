@@ -21,4 +21,8 @@
 
 .li dl dd {
     flex: 1;
+    margin-top: 10px;
+}
+.li dl dd a {
+    padding-top: 10px;
 }

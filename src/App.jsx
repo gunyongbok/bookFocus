@@ -6,6 +6,7 @@ import BookResult from './routes/BookResult';
 import axios from 'axios';
 import { useQuery } from 'react-query';
 import BookSearch from './routes/BookSearch';
+import './css/App.css';
 
 const SERVER_URL =
     'http://ec2-52-79-150-177.ap-northeast-2.compute.amazonaws.com:24330/api/v1/report';

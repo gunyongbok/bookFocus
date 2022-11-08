@@ -9,34 +9,40 @@ function Main({ data }) {
     let navigate = useNavigate();
 
     return (
-        <div>
-            <button
-                onClick={() => {
-                    navigate('/bookfocus');
-                }}
-            >
-                독서록 쓰기
-            </button>
-            <button
-                onClick={() => {
-                    navigate('/booksearch');
-                }}
-            >
-                책 검색하기
-            </button>
+        <div className={styles.main_page}>
+            <header className={styles.main_header}>
+                <button
+                    className={styles.button}
+                    onClick={() => {
+                        navigate('/bookfocus');
+                    }}
+                >
+                    독서록 쓰기 ㅣ
+                </button>
+                <button
+                    className={styles.button}
+                    onClick={() => {
+                        navigate('/booksearch');
+                    }}
+                >
+                    책 검색하기
+                </button>
+            </header>
+
             <ul className={styles.ul}>
                 {data['result'].map((a, i) => (
                     <li
                         className={styles.li}
                         key={data['result'][i].bookReportId}
                     >
-                        {data['result'][i].title}
                         <Link
+                            className={styles.link}
                             to={`/bookresult/${data['result'][i].bookReportId}`}
                         >
-                            GO
+                            {data['result'][i].title}
                         </Link>
                         <button
+                            className={styles.delete_btn}
                             onClick={async () => {
                                 await axios
                                     .put(
