@@ -17,13 +17,22 @@
     align-items: center;
 }
 .button {
-    width: 10vw;
-    height: 5vh;
-    font-size: 20px;
+    width: 8vw;
+    height: 3vh;
+    font-size: 18px;
     border-radius: 20px;
     border: none;
+    margin-top: 10px;
     background-color: #fbf3db;
 }
 .book_img {
     width: 20vh;
+}
+.homeBtn {
+    margin-top: 30px;
+    font-size: 30px;
+    color: #835905;
+    background-color: transparent;
+    border: 3px solid #835905;
+    border-radius: 20px;
 }

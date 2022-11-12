@@ -6,6 +6,7 @@
     border: none;
     border-radius: 20px;
     background-color: #fbf3db;
+    padding: 20px;
 }
 .contents_textarea:focus {
     outline: none;

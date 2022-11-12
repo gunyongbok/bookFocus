@@ -10,10 +10,44 @@ body {
 .container {
     height: 100vh;
     background-color: #e2cda6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .header {
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 50px;
+}
+.contents {
+    height: 60%;
+    background-color: #d1be98;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    line-height: 30px;
+    width: 90%;
+}
+.bookInfo_box {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+.bookTitle {
+    font-size: 30px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid black;
+}
+.homeBtn {
+    margin-top: 30px;
+    font-size: 30px;
+    color: #835905;
+    background-color: transparent;
+    border: 3px solid #835905;
+    border-radius: 20px;
 }

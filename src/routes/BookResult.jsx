@@ -17,26 +17,32 @@ function BookResult({ data }) {
                 {dataResult.map((a) => {
                     if (a.bookReportId === Number(id)) {
                         return (
-                            <div key={a.bookReportId}>
-                                <h1>{a.title}</h1>
-                                <h2>{a.bookTitle}</h2>
-                                <h4>{a.author}</h4>
-                                <p>{a.content}</p>
+                            <div className={styles.bookInfo_box} key={a.bookReportId}>
+                                <h1 className={styles.bookTitle}>{a.bookTitle}</h1>
+                                <h4 className={styles.author}>{a.author}</h4>
                             </div>
                         );
                     }
                 })}
                 <img className={styles.book_img} src={book2} />
             </div>
-            <span>
-                <button
-                    onClick={() => {
-                        navigate('/');
-                    }}
-                >
-                    Home
-                </button>
-            </span>
+            {dataResult.map((a) => {
+                if (a.bookReportId === Number(id)) {
+                    return (
+                        <p className={styles.contents} key={a.bookReportId}>
+                            {a.content}
+                        </p>
+                    );
+                }
+            })}
+            <button
+                className={styles.homeBtn}
+                onClick={() => {
+                    navigate('/');
+                }}
+            >
+                Home
+            </button>
         </div>
     );
 }

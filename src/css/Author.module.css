@@ -4,6 +4,8 @@
     height: 3vh;
     border: none;
     border-radius: 20px;
+    background-color: #fbf3db;
+    margin-bottom: 15px;
 }
 .author_input:focus {
     outline: none;
