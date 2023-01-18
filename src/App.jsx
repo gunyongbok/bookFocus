@@ -8,8 +8,7 @@ import { useQuery } from 'react-query';
 import BookSearch from './routes/BookSearch';
 import './css/App.css';
 
-const SERVER_URL =
-    'http://ec2-52-79-150-177.ap-northeast-2.compute.amazonaws.com:24330/api/v1/report';
+const SERVER_URL = 'http://ec2-52-79-150-177.ap-northeast-2.compute.amazonaws.com:24330/api/v1/report';
 
 function App() {
     const { isLoading, data } = useQuery('data', async () => {
@@ -25,14 +24,8 @@ function App() {
                 ) : (
                     <Routes>
                         <Route path="/" element={<Main data={data} />} />
-                        <Route
-                            path="/bookfocus"
-                            element={<BookFocus data={data} />}
-                        />
-                        <Route
-                            path="/bookresult/:id"
-                            element={<BookResult data={data} />}
-                        />
+                        <Route path="/bookfocus" element={<BookFocus data={data} />} />
+                        <Route path="/bookresult/:id" element={<BookResult data={data} />} />
                         <Route path="/booksearch" element={<BookSearch />} />
                         <Route path="*" element={<NotFound />}></Route>
                     </Routes>
